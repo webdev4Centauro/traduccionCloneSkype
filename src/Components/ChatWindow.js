@@ -1,7 +1,7 @@
 import React from "react";
 import store from "../Store/index.js";
 import Header from "./Header.js";
-import Chats from "./Chats.js";
+import Chats from "./Chats.tsx";
 import _ from "lodash";
 import '../Styles/ChatWindow.css'
 import MessageInput from './MessageInput.tsx'

@@ -3,9 +3,11 @@ import User from "../Containers/UserContainer";
 import IUserModel from "../models/IUserModel";
 import "../Styles/Sidebar.css";
 
-interface user{
-  user:IUserModel;
+
+interface ISidebarProps{
+  usuario:IUserModel;
 }
+
 const Sidebar = ( contacts:[IUserModel] ) => {
   //console.log("LOGSIDEBAR",contacts);
   

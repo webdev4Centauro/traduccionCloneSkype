@@ -1,7 +1,8 @@
 import React, { Component } from "react";
+import IMessageModel from "../models/IMessageModel";
 import "../Styles/Chats.css";
 
-const Chat = ({ message }) => {
+const Chat = ( message:IMessageModel ) => {
   const { text, is_user_msg } = message;
   return (
     <span className={`Chat ${is_user_msg ? "is-user-msg" : ""}`}>{text}</span>
@@ -9,8 +10,8 @@ const Chat = ({ message }) => {
 };
 
 class Chats extends Component {
-  constructor(props) {
-    super(props);
+  constructor(messages:[IMessageModel]) {
+    super(messages);
     this.chatsRef = React.createRef();
   }
 
@@ -29,7 +30,7 @@ class Chats extends Component {
   render() {
     return (
       <div className="Chats" ref={this.chatsRef}>
-        {this.props.messages.map(message => (
+        {this.props.messages.map((message:IMessageModel) => (
           <Chat message={message} key={message.number} />
         ))}
       </div>

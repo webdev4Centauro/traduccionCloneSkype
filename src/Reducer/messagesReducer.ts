@@ -11,10 +11,14 @@ export default function messages(estado:any = getMessages(20), action:any) {
       const { message, userId } = action.payload;
      // console.log(getMessages(20));
       //const allUserMsgs= estado[(userId)];
-      let allUserMsgs={};
-      allUserMsgs= estado[(userId)];
+     // let allUserMsgs={};
+     
+      const allUserMsgs= estado[(userId)];
+
       //const number:number= +_.keys(allUserMsgs).pop() + 1;
       const number:number= +(_.keys(allUserMsgs)?.pop() ||{}) + 1;
+
+
       return {
         ...estado,
         [userId]: {
