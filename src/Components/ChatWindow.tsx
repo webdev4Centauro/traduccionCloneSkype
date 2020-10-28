@@ -1,12 +1,12 @@
 import React from "react";
 import store from "../Store/index.js";
-import Header from "./Header.js";
-import Chats from "./Chats.tsx";
+import Header from "./Header";
+import Chats from "./Chats";
 import _ from "lodash";
 import '../Styles/ChatWindow.css'
-import MessageInput from './MessageInput.tsx'
+import MessageInput from './MessageInput'
 
-const ChatWindow = ({ activeUserId }) => {
+const ChatWindow = ( activeUserId:string ) => {
   const state = store.getState();
   const activeUser = state.contacts[activeUserId];
   const activeMessages = state.messages[activeUserId];

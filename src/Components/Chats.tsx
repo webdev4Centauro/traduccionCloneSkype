@@ -12,7 +12,7 @@ const Chat = ( message:IMessageModel ) => {
 class Chats extends Component {
   constructor(messages:[IMessageModel]) {
     super(messages);
-    this.chatsRef = React.createRef();
+    //this.createRef = React.createRef();
   }
 
   componentDidMount() {
@@ -24,12 +24,13 @@ class Chats extends Component {
   }
 
   scrollToBottom = () => {
-    this.chatsRef.current.scrollTop = this.chatsRef.current.scrollHeight;
+  //  this.chatsRef.current.scrollTop = this.chatsRef.current.scrollHeight;
   };
   
+  //<div className="Chats" ref={this.chatsRef}>
   render() {
     return (
-      <div className="Chats" ref={this.chatsRef}>
+      <div className="Chats" >
         {this.props.messages.map((message:IMessageModel) => (
           <Chat message={message} key={message.number} />
         ))}

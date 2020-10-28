@@ -1,7 +1,8 @@
 import React from 'react'
+import IUserModel from '../models/IUserModel';
 import '../Styles/Header.css'
 
-function Header ({user}) {
+function Header (user:IUserModel) {
     const {name, status} = user;
     return (
         <header className="Header">
