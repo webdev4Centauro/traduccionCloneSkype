@@ -4,11 +4,16 @@ import store from "../Store/index.js";
 import { setActiveUserId } from "../Actions/index";
 import IUserModel from "../models/IUserModel";
 
-const User = ( user:IUserModel ) => {
-  const { name, profile_pic, status, user_id } = user; 
+interface IUserProps{
+  user:IUserModel;
+
+}
+
+const User:React.FC<IUserProps> = ( props) => {
+  const { name, profile_pic, status, user_id } = props.user; 
 
   //eventually, try and convert it to arrow function
-  function handleUserClick( user_id:number ) {
+  function handleUserClick( user_id:string ) {
     store.dispatch(setActiveUserId(user_id));
   }
 

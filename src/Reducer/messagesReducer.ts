@@ -4,7 +4,7 @@ import _ from "lodash";
 
 
 export default function messages(estado:any = getMessages(20), action:any) {
-  //console.log("ESTADO", estado);
+  console.log("GET 20 MESSAGES", estado);
   
   switch (action.type) {
     case SEND_MESSAGE:
@@ -14,11 +14,8 @@ export default function messages(estado:any = getMessages(20), action:any) {
      // let allUserMsgs={};
      
       const allUserMsgs= estado[(userId)];
-
       //const number:number= +_.keys(allUserMsgs).pop() + 1;
       const number:number= +(_.keys(allUserMsgs)?.pop() ||{}) + 1;
-
-
       return {
         ...estado,
         [userId]: {

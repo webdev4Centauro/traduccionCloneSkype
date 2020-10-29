@@ -4,7 +4,7 @@ import {
   SEND_MESSAGE
 } from "../Constants/action-types";
 
-export const setActiveUserId = (id:number) => ({
+export const setActiveUserId = (id:string) => ({
   type: SET_ACTIVE_USER_ID,
   payload: id
 });

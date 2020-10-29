@@ -5,15 +5,15 @@ import "../Styles/Sidebar.css";
 
 
 interface ISidebarProps{
-  usuario:IUserModel;
+  //usuario:IUserModel;
+  contacts:IUserModel[]
 }
 
-const Sidebar = ( contacts:[IUserModel] ) => {
+const Sidebar:React.FC<ISidebarProps> = (props) =>{
   //console.log("LOGSIDEBAR",contacts);
-  
   return (
     <aside className="Sidebar">
-      {contacts.map((contact:IUserModel) => (
+      {props.contacts.map((contact:IUserModel) => (
         <User user={contact} key={contact.user_id} />
       ))}
     </aside>

@@ -4,13 +4,18 @@ import Empty from "./Empty";
 import ChatWindow from "./ChatWindow";
 import IUserModel from "../models/IUserModel";
 
+interface IMainProps{
+  user:IUserModel;
+  activeUserId:string;
+
+}
 // Parameters are props
-const Main = ( user:IUserModel, activeUserId:string ) => {
+const Main:React.FC<IMainProps> = ( props ) => {
   const renderMainContent = () => {
-    if (!activeUserId) {
-      return <Empty user={user} activeUserId={activeUserId} />;
+    if (!props.activeUserId) {
+      return <Empty user={props.user} activeUserId={props.activeUserId} />;
     } else {
-      return <ChatWindow activeUserId={activeUserId} />;
+      return <ChatWindow activeUserId={props.activeUserId} />;
     }
   };
   return <main className="Main">{renderMainContent()}</main>;

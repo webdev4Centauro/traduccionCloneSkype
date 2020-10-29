@@ -2,8 +2,14 @@ import React from "react";
 import IUserModel from "../models/IUserModel";
 import "../Styles/Empty.css";
 
-const Empty = ( user:IUserModel ) => {
-  const { name, profile_pic, status } = user;
+
+interface IEmptyProps{
+  user:IUserModel;
+  activeUserId:string;
+
+}
+const Empty:React.FC<IEmptyProps> = ( props) => {
+  const { name, profile_pic, status } =props.user;
   const first_name = name.split(" ")[0];
 
   return (
